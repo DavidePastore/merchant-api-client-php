@@ -668,13 +668,13 @@ class ProductApi
      * Upsert Products.
      *
      * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantProductRequest[] $merchantProductRequest merchantProductRequest (required)
-     * @param  bool $ignoreStock ignoreStock (optional, default to false)
+     * @param  string $ignoreStock ignoreStock (optional, default to 'false')
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChannelEngine\Merchant\ApiClient\Model\SingleOfProductCreationResult
      */
-    public function productCreate($merchantProductRequest, $ignoreStock = false)
+    public function productCreate($merchantProductRequest, $ignoreStock = 'false')
     {
         list($response) = $this->productCreateWithHttpInfo($merchantProductRequest, $ignoreStock);
         return $response;
@@ -686,13 +686,13 @@ class ProductApi
      * Upsert Products.
      *
      * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantProductRequest[] $merchantProductRequest (required)
-     * @param  bool $ignoreStock (optional, default to false)
+     * @param  string $ignoreStock (optional, default to 'false')
      *
      * @throws \ChannelEngine\Merchant\ApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChannelEngine\Merchant\ApiClient\Model\SingleOfProductCreationResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productCreateWithHttpInfo($merchantProductRequest, $ignoreStock = false)
+    public function productCreateWithHttpInfo($merchantProductRequest, $ignoreStock = 'false')
     {
         $request = $this->productCreateRequest($merchantProductRequest, $ignoreStock);
 
@@ -773,12 +773,12 @@ class ProductApi
      * Upsert Products.
      *
      * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantProductRequest[] $merchantProductRequest (required)
-     * @param  bool $ignoreStock (optional, default to false)
+     * @param  string $ignoreStock (optional, default to 'false')
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productCreateAsync($merchantProductRequest, $ignoreStock = false)
+    public function productCreateAsync($merchantProductRequest, $ignoreStock = 'false')
     {
         return $this->productCreateAsyncWithHttpInfo($merchantProductRequest, $ignoreStock)
             ->then(
@@ -794,12 +794,12 @@ class ProductApi
      * Upsert Products.
      *
      * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantProductRequest[] $merchantProductRequest (required)
-     * @param  bool $ignoreStock (optional, default to false)
+     * @param  string $ignoreStock (optional, default to 'false')
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productCreateAsyncWithHttpInfo($merchantProductRequest, $ignoreStock = false)
+    public function productCreateAsyncWithHttpInfo($merchantProductRequest, $ignoreStock = 'false')
     {
         $returnType = '\ChannelEngine\Merchant\ApiClient\Model\SingleOfProductCreationResult';
         $request = $this->productCreateRequest($merchantProductRequest, $ignoreStock);
@@ -841,12 +841,12 @@ class ProductApi
      * Create request for operation 'productCreate'
      *
      * @param  \ChannelEngine\Merchant\ApiClient\Model\MerchantProductRequest[] $merchantProductRequest (required)
-     * @param  bool $ignoreStock (optional, default to false)
+     * @param  string $ignoreStock (optional, default to 'false')
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productCreateRequest($merchantProductRequest, $ignoreStock = false)
+    public function productCreateRequest($merchantProductRequest, $ignoreStock = 'false')
     {
         // verify the required parameter 'merchantProductRequest' is set
         if ($merchantProductRequest === null || (is_array($merchantProductRequest) && count($merchantProductRequest) === 0)) {
